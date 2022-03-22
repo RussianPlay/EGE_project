@@ -1,0 +1,11 @@
+def calc(n, lst):
+    global k
+    if n < 40:
+        return calc(n + 1, lst + [n + 1]) or calc(n * 2, lst + [n * 2]) or calc(n * 3, lst + [n * 3])
+    elif n == 40 and 13 in lst and 17 not in lst:
+        k += 1
+
+
+k = 0
+calc(2, [])
+print(k)
