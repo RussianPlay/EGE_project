@@ -1,6 +1,6 @@
 from itertools import product
 
-word = "ПАРУС"
+word = list(sorted("ПАРУС"))
 k = 0
 for new_word in product(word, repeat=len(word)):
     new_word = "".join(new_word)
