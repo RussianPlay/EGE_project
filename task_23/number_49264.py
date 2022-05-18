@@ -6,6 +6,7 @@ def F(n, com_k):
         lst.append(n)
         return
 
+
 lst = []
 F(2, 0)
 print(len(set(lst)))
