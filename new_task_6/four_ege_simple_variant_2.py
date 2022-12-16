@@ -1,28 +1,32 @@
-from turtle import *
-import math
+import turtle as t
 
-color("black", "red")
-m = 100
-begin_fill()
-left(90)
+t.color("red")
+m = 80
+t.begin_fill()
+t.left(90)
 while True:
-    left(36)
-    forward(4 * m)
-    left(36)
-    cur_pos = round(xcor(), 2), round(ycor(), 2)
-    print(cur_pos)
+    print(round(t.xcor(), 2), round(t.ycor(), 2))
+    t.left(36)
+    t.forward(4 * m)
+    t.left(36)
+    cur_pos = round(t.xcor(), 2), round(t.ycor(), 2)
     if cur_pos == (0.00, 0.00):
         break
-end_fill()
-
-canvas = getcanvas()
+t.end_fill()
+# t.up()
+# t.speed(10)
+canvas = t.getcanvas()
 k = 0
-for y in range(-1000 * m, 1000 * m, m):
-    for x in range(-1000 * m, 1000 * m, m):
+for y in range(-10 * m, 10 * m, m):
+    for x in range(-10 * m, 10 * m, m):
+        # t.goto(x, y)
+        # t.dot(2)
         item = canvas.find_overlapping(x, y, x, y)
-        if len(item) == 1 and item[0] == 5:
+        if (x, y) == (0, 0):
+            print(item)
+        if len(item) and item[0] == 5:
             k += 1
-
 print(k)
-done()
-exit()
+t.hideturtle()
+t.done()
+
