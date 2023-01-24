@@ -1,7 +1,7 @@
 def tcalc(K, S, p):
-    if K + S >= 62 and (p == 2 or p == 4):
+    if (K + S) >= 62 and (p == 2 or p == 4):
         return True
-    if (K + S < 62 and p == 4) or K + S >= 62:
+    if ((K + S) < 62 and p == 4) or (K + S) >= 62:
         return False
     if p % 2 == 0:
         return tcalc(K + 3, S, p + 1) and tcalc(K * 2, S, p + 1) and tcalc(K, S + 3, p + 1) and tcalc(K, S * 2, p + 1)
